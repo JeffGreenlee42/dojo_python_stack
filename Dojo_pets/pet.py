@@ -18,16 +18,20 @@ class Pet:
 
     def sleep(self):
         self.energy += 25
+        return self
 
     def eat(self):
         self.energy += 5
         self.health += 10
+        return self
 
     def play(self):
         self.health += 5
+        return self
 
     def noise(self):
         print(self.pet_sound)
+        return self
 
     def list_attributes(self):
         print(f"{self.type}\n"
@@ -35,3 +39,4 @@ class Pet:
               f"{self.health}\n"
               f"{self.energy}\n"
               f"{self.pet_sound}")
+        return self
