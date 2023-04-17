@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    align-content: center;
+}
+
+h1 {
+    justify-content: center;
+    text-align: center;
+    border-color: black;
+    color: blue;
+    font-size: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+}
