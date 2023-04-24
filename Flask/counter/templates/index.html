@@ -6,16 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_css.css') }}">
+        <script language="javascript">
+            function changeBackgroundColor() {
+                // this doesn't work either!
+                console.log( '{{ click_button_color  }}' )
+                clkBtnClr = `{{ click_button_color }}`;
+                document.getElementsByClassName('click_button').style.backgroundColor = clkBtnClr;
+            }
+       </script>
         <title>Counter</title>
     </head>
     <body>
         <div class="container">
             <H1>Counter</H1>
             <h2>{{session['refresh_count']}}</h2>
+            <!-- The jinja variable works fine here! Why not inline or external javascript? -->
+            <h2>The color is {{click_button_color}}</h2>
             <div class="counter_buttons">
-                <p>{{click_button_color}}</p>
-                <a href="/" type="button" class="click_button" style="background-color:{{ click_button_color }}"> Click </a>
-                <button type="reset" class="reset_button">Reset</button>
+                <a href="/" type="button" class="click_button" onclick="changeBackgroundColor()"> Click </a>
+                <a href="/clear" type="reset" class="reset_button">Reset</button>
             </div>
         </div>
     </body>
