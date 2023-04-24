@@ -1,0 +1,52 @@
+* {
+    /* border: 1px solid black; */
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+html, body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* background-color: aquamarine; */
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: blue;
+    height: 40px;
+}
+
+h2  {
+    text-align: center;
+}
+
+.counter_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.click_button, .reset_button {
+    margin: 30px;
+    padding: 20px 30px;
+    font-size: 20px;
+}
+
+.click_button {
+    background-color: yellow;
+    color: black;
+}
+
+.reset_button {
+    background-color: green;
+    color: whitesmoke;
+}
