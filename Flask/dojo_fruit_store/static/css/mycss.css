@@ -1,0 +1,31 @@
+.jumbotron {
+    height: 100%;
+    background-color: darkseagreen;
+}
+
+.fruit_display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+
+    /* flex-wrap: wrap; */
+}
+
+.fruit_image {
+    flex-direction: column;
+    vertical-align: bottom;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.caption {
+    margin: 20px;
+    text-align: center;
+}
+
+.go_back {
+    margin-top: 50px;
+}
