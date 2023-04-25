@@ -10,16 +10,34 @@
     <title>Survey</title>
 </head>
 <body>
-    <form action="" method="get">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="location">Dojo Location:</label><br>
-        <select  id="location" name="location">
-            <option value="new_jersey">New Jersey</option>
-            <option value="timbucktoo">Timbucktoo</option>
-            <option value="flatland">FlatLand</option>
-            <option value="nowhere">Nowhere</option>
-        </select>
-    </form>
+    <div class="container">
+        <div class="form-group">
+            <form action="" method="get">
+                <div class="form-field">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-field">
+                    <label for="location">Dojo Location:</label><br>
+                    <select  id="location" name="location">
+                    <option value="new_jersey">New Jersey</option>
+                    <option value="timbucktoo">Timbucktoo</option>
+                    <option value="flatland">FlatLand</option>
+                    <option value="nowhere">Nowhere</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="location">Favorite Language:</label><br>
+                    <select  id="favorite_language" name="favorite_language">
+                    <option value="phython">Python</option>
+                    <option value="Javascript">JavaScript</option>
+                    <option value="c-sharp">C#</option>
+                    <option value="haskell">Haskell</option>
+                    </select>
+                </div>
+
+            </form>
+        </div>
+    </div>
 </body>
 </html>
