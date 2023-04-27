@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 80%;
+    width: 100%;
+    background-color: rgb(235, 235, 211);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left  ;
+    background-color: springgreen;
+    border: 5px;
+    border-style: solid;
+    border-color: blue;
+    margin-top: 60px;
+    padding: 30px;
+    width: 1200px;
+    height: 100%;
+}
+
+.your_gold_amount {
+    height: 50px;
+    width: 100%;
+}
+
+.gold_amount {
+    text-align: center;
+    width: 100px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    vertical-align: middle;
+}
+
+
+.form-control {
+    width: 100px;
+    height: 50px;
+}
+
+.honey_pots {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 250px;
+    background-color: bisque;
+}
+
+.farm, .cave, .house, .casino {
+    width: 150px;
+    height: 150px;
+    background-color: brown;
+}
