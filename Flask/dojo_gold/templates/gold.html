@@ -29,26 +29,32 @@
                 <img src="{{ url_for('static', filename='image/cave.jpeg') }}" class="img-fluid" alt="cave">
                 <form class="d-flex flex-column" action="/process_money" method="POST">
                     <input type="hidden" name="process_money" value="cave">
-                    <input class="process_action" type="submit" >
+                    <input class="process_action" type="submit" value="Cave" >
                 </form>
             </div>
             <div class="house">
                 <img src="{{ url_for('static', filename='image/house.jpeg') }}" class="img-fluid" alt="house">
                 <form class="d-flex flex-column" action="/process_money" method="POST">
                     <input type="hidden" name="process_money" value="house">
-                    <input class="process_action" type="submit">
+                    <input class="process_action" type="submit" value="House">
                 </form>
             </div>
             <div class="casino">
                 <img src="{{ url_for('static', filename='image/casino.jpeg') }}" class="img-fluid" alt="casino">
                 <form class="d-flex flex-column" action="/process_money" method="POST">
                     <input type="hidden" name="process_money" value="casino">
-                    <input class="process_action" type="submit">
+                    <input class="process_action" type="submit" value="Casino">
                 </form>
             </div>
         </div>
-        <div class="d-flex">
-            <p class="activities">Hello world</p>
+        <div class="d-flex flex-column activities"">
+                {% for message in session.activities %}
+                    {% if message[1] == False %}
+                        <p style="color:red;">{{message[0]}}</p>
+                    {% else %}
+                        <p>{{ message[0] }}</p>
+                    {% endif %}
+                {% endfor %}
         </div>
     </div>
 </body>

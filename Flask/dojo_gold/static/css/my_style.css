@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 80%;
+    height: 85%;
     width: 100%;
     background-color: rgb(235, 235, 211);
 }
@@ -10,7 +10,7 @@ body, html {
     display: d-flex;
     flex-direction: column;
     justify-content: left  ;
-    background-color: springgreen;
+    background-color: rgb(44, 133, 197);
     border: 5px;
     border-style: solid;
     border-color: blue;
@@ -48,7 +48,7 @@ form {
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
-    height: 250px;
+    height: 275px;
     background-color: bisque;
 }
 
@@ -79,8 +79,13 @@ img {
 }
 
 .activities {
-    margin: 50px 60px;
+    margin: 70px 60px;
+    height: 225px;
     width: 90%;
     background-color: white;
-    counter-reset: black;
+    /* counter-reset: black; */
+}
+
+p {
+    margin: 2px;
 }
