@@ -11,28 +11,44 @@
 <body>
     <div class="container">
         <div class="your_gold_amount">
-            <form action="" method="post">
+            <form action="/" method="POST">
                 <label class="gold_amount" for="gold_amount">Your Gold:</label>
-                <input class="form-control" name="gold_amount" type="text" value="$0.00" aria-label="Gold Amount" readonly>
+                <input class="form-control" name="gold_amount" type="text" value="{{session['gold']}}" aria-label="Gold Amount" readonly>
+                <a href="/clear">Clear</a> 
             </form>
         </div>
-        <div class="honey_pots">
-            <div class="farm">
-                
+        <div class="d-flex flex-md-row justify-content-around align-items-center" >
+            <div class="d-flex flex-column farm">
+                <img src="{{ url_for('static', filename='image/farm.jpeg') }}" class="img-fluid " alt="farm">
+                <form class="d-flex flex-column" action="/process_money" method="POST">
+                    <input type="hidden" name="process_money" value="farm">
+                    <input class="process_action" type="submit" value="Farm">
+                </form>
             </div>
-            <div class="cave">
-                
+            <div class="d-flex flex-column cave">
+                <img src="{{ url_for('static', filename='image/cave.jpeg') }}" class="img-fluid" alt="cave">
+                <form class="d-flex flex-column" action="/process_money" method="POST">
+                    <input type="hidden" name="process_money" value="cave">
+                    <input class="process_action" type="submit" >
+                </form>
             </div>
             <div class="house">
-                
+                <img src="{{ url_for('static', filename='image/house.jpeg') }}" class="img-fluid" alt="house">
+                <form class="d-flex flex-column" action="/process_money" method="POST">
+                    <input type="hidden" name="process_money" value="house">
+                    <input class="process_action" type="submit">
+                </form>
             </div>
             <div class="casino">
-                
+                <img src="{{ url_for('static', filename='image/casino.jpeg') }}" class="img-fluid" alt="casino">
+                <form class="d-flex flex-column" action="/process_money" method="POST">
+                    <input type="hidden" name="process_money" value="casino">
+                    <input class="process_action" type="submit">
+                </form>
             </div>
-            
         </div>
-        <div class="Activities">
-            
+        <div class="d-flex">
+            <p class="activities">Hello world</p>
         </div>
     </div>
 </body>

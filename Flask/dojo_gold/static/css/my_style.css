@@ -7,7 +7,7 @@ body, html {
 }
 
 .container {
-    display: flex;
+    display: d-flex;
     flex-direction: column;
     justify-content: left  ;
     background-color: springgreen;
@@ -53,7 +53,34 @@ form {
 }
 
 .farm, .cave, .house, .casino {
-    width: 150px;
-    height: 150px;
-    background-color: brown;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: black;
+    
+}
+
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.process_action {
+    display: block;
+    border: 1px solid #000;
+    background-color: coral;
+    color: black;
+    height: 40px;
+    text-align: center;
+    margin: 20px;
+    padding: 6px 3px 6px 3px;
+    width: 60px;
+}
+
+.activities {
+    margin: 50px 60px;
+    width: 90%;
+    background-color: white;
+    counter-reset: black;
 }
