@@ -14,47 +14,55 @@
             <form action="/" method="POST">
                 <label class="gold_amount" for="gold_amount">Your Gold:</label>
                 <input class="form-control" name="gold_amount" type="text" value="{{session['gold']}}" aria-label="Gold Amount" readonly>
-                <a href="/clear">Clear</a> 
+                {% if session.gold >= 500 %}
+                    <a class="clr_button" type="button" href="/clear">Clear</a> 
+                    <p>You Win! Start over! click on the Clear button!</p>
+                {% elif session.turns_left < 1 %}
+                    <a class="clr_button" type="button" href="/clear">Clear</a> 
+                    <p>You Lose! Start over! click the Clear Button</p>
+                {% else %}
+                    <p>You have {{session.turns_left}} chances left to get to 500 gold pieces!</p>
+                {% endif %}
             </form>
         </div>
         <div class="d-flex flex-md-row justify-content-around align-items-center" >
             <div class="d-flex flex-column farm">
                 <img src="{{ url_for('static', filename='image/farm.jpeg') }}" class="img-fluid " alt="farm">
-                <form class="d-flex flex-column" action="/process_money" method="POST">
+                <form class="d-flex flex-column" action="/process_money/10/20" method="POST">
                     <input type="hidden" name="process_money" value="farm">
                     <input class="process_action" type="submit" value="Farm">
                 </form>
             </div>
             <div class="d-flex flex-column cave">
                 <img src="{{ url_for('static', filename='image/cave.jpeg') }}" class="img-fluid" alt="cave">
-                <form class="d-flex flex-column" action="/process_money" method="POST">
+                <form class="d-flex flex-column" action="/process_money/5/10" method="POST">
                     <input type="hidden" name="process_money" value="cave">
                     <input class="process_action" type="submit" value="Cave" >
                 </form>
             </div>
             <div class="house">
                 <img src="{{ url_for('static', filename='image/house.jpeg') }}" class="img-fluid" alt="house">
-                <form class="d-flex flex-column" action="/process_money" method="POST">
+                <form class="d-flex flex-column" action="/process_money/2/5" method="POST">
                     <input type="hidden" name="process_money" value="house">
                     <input class="process_action" type="submit" value="House">
                 </form>
             </div>
             <div class="casino">
                 <img src="{{ url_for('static', filename='image/casino.jpeg') }}" class="img-fluid" alt="casino">
-                <form class="d-flex flex-column" action="/process_money" method="POST">
+                <form class="d-flex flex-column" action="/process_money/-50/50" method="POST">
                     <input type="hidden" name="process_money" value="casino">
                     <input class="process_action" type="submit" value="Casino">
                 </form>
             </div>
         </div>
-        <div class="d-flex flex-column activities"">
-                {% for message in session.activities %}
-                    {% if message[1] == False %}
-                        <p style="color:red;">{{message[0]}}</p>
-                    {% else %}
-                        <p>{{ message[0] }}</p>
-                    {% endif %}
-                {% endfor %}
+        <div class="d-flex flex-column-reverse justify-content-end activities">
+            {% for message in session.activities %}
+                {% if message[1] == False %}
+                    <p class="deficit">{{ message[0] }}</p>
+                {% else %}
+                    <p class="credit">{{ message[0] }}</p>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </body>

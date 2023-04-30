@@ -30,6 +30,16 @@ body, html {
     width: 100px;
 }
 
+.clr_button {
+    background-color: darksalmon;
+    color: white;
+    margin-left: 20px;
+    padding: 8px;
+    text-align: center;
+    width: 70px;
+
+}
+
 form {
     display: flex;
     align-items: center;
@@ -71,7 +81,7 @@ img {
     border: 1px solid #000;
     background-color: coral;
     color: black;
-    height: 40px;
+    height: 100%;
     text-align: center;
     margin: 20px;
     padding: 6px 3px 6px 3px;
@@ -80,12 +90,27 @@ img {
 
 .activities {
     margin: 70px 60px;
-    height: 225px;
+    max-height: 150px;
+    min-height: 0;
+    min-width: 0;
+    overflow-y: auto;
     width: 90%;
     background-color: white;
     /* counter-reset: black; */
 }
 
 p {
-    margin: 2px;
+    color: yellow;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+.deficit {
+    color: red;
+}
+
+.credit {
+    color: green;
 }
